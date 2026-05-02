@@ -37,6 +37,7 @@ Il permet :
 - Création d’utilisateurs
 - Modification d’utilisateurs
 - Suppression d’utilisateurs
+- Recherche utilisateurs
 - Gestion des rôles
 - Historique des actions
 - Journalisation des événements
