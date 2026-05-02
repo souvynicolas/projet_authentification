@@ -1,6 +1,6 @@
 # 🔐 Projet Authentification
 
-Deuxième projet réalisé dans le cadre de l’épreuve E6.
+Premier projet réalisé dans le cadre de l’épreuve E6.
 
 Application web d’authentification développée avec PHP, MySQL, HTML, CSS et JavaScript.
 
