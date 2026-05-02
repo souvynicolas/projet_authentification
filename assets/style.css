@@ -1,0 +1,499 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+:root{
+    --green: linear-gradient(to right, rgb(107,142,35), rgb(85,107,47));
+    --white: linear-gradient(to right, rgb(242,240,239), rgb(217,216,215));
+    --green-solid: rgb(107,142,35);
+    --green-dark: rgb(85,107,47);
+    --red-bg: rgb(183, 40, 40);
+    --red-border: rgb(140, 20, 20);
+    --light-bg: rgb(248,248,248);
+    --border-light: rgba(107,142,35,0.25);
+    --shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    margin: 0 3%;
+    background: #fff;
+    color: #111;
+}
+
+label{
+    color: var(--green-solid);
+    font-weight: 400;
+}
+
+input,
+select,
+textarea{
+    color: var(--green-dark);
+    background: white;
+    border: 1px solid var(--border-light);
+    padding: 8px 10px;
+    min-height: 38px;
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color: var(--green-solid);
+    box-shadow: 0 0 0 3px rgba(107,142,35,0.15);
+}
+
+button{
+    all: unset;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    color: white;
+    background: var(--green);
+    border-radius: 6px;
+    padding: 10px 16px;
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover{
+    opacity: 0.95;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    background: var(--green);
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    border-radius: 0 0 8px 8px;
+}
+
+.header_nav_list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+}
+
+.header_nav_list_li{
+    color: var(--green-solid);
+    background: var(--white);
+    padding: 10px 14px;
+    border-radius: 6px;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.header_nav_list_li:hover{
+    color: rgb(242,240,239);
+    background: var(--green);
+}
+
+.header_nav_list_li:active{
+    transform: scale(0.95);
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table_container{
+    max-height: 320px;
+    overflow-y: auto;
+    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+.table{
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 760px;
+}
+
+th,
+td{
+    padding: 8px 8px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.table_head_th{
+    color: rgb(242,240,239);
+    background: var(--green);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+tbody tr:nth-child(odd){
+    background: rgba(107,142,35,0.3);
+}
+
+tbody tr:nth-child(even){
+    background-color: #ffffff;
+}
+
+.table_body tr{
+    cursor: pointer;
+}
+
+.table_body tr:hover{
+    background-color: rgb(217,216,215);
+}
+
+.table_body tr.selected{
+    background-color: rgb(85,107,47);
+    color: white;
+}
+
+.td_statut{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-width: 36px;
+}
+
+.actif{
+    background-image: url("../svg/validate_check.svg");
+}
+
+.inactif{
+    background-image: url("../svg/cancel_check.svg");
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.login_body{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 16px;
+}
+
+.login_form{
+    width: 100%;
+    max-width: 420px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    border-radius: 12px;
+    gap: 16px;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.login_form_log_pass{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+}
+
+.login_form_log,
+.login_form_pass{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.login_form_button{
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* =========================
+   ERRORS
+========================= */
+
+.errors{
+    width: 100%;
+    padding: 14px 16px;
+    color: white;
+    border-radius: 8px;
+    background: var(--red-bg);
+    border: 1px solid var(--red-border);
+    margin-top: 12px;
+}
+
+.errors ul{
+    margin: 0;
+    padding-left: 18px;
+}
+
+.errors li{
+    margin-bottom: 6px;
+}
+
+.errors li:last-child{
+    margin-bottom: 0;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.main_dashboard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.table_container.dashboard{
+    margin: 12px 0 0 0;
+}
+
+.form_dashboard{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 8px;
+    flex-wrap: wrap;
+}
+
+.body_dashboard button{
+    padding: 10px 16px;
+}
+
+/* =========================
+   SEARCH / EDIT / CREATE / HISTORY
+========================= */
+
+.main_search,
+.edit_main,
+.main_create,
+.history_main{
+    padding-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.search_form,
+.edit_form,
+.create_form,
+.history_form{
+    width: 100%;
+    max-width: 540px;
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.search_form div,
+.edit_form div,
+.create_form div,
+.history_form div{
+    padding-bottom: 14px;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 12px;
+}
+
+.search_form label,
+.edit_form label,
+.create_form label,
+.history_form label{
+    min-width: 90px;
+}
+
+.search_form input,
+.search_form select,
+.edit_form input,
+.edit_form select,
+.create_form input,
+.create_form select,
+.history_form input,
+.history_form select{
+    flex: 1 1 220px;
+    min-width: 180px;
+}
+
+.search_form_button,
+.edit_form_button,
+.create_form_button,
+.history_main button{
+    margin: 8px 8px 0 0;
+    padding: 10px 16px;
+    border-radius: 6px;
+}
+
+.body_edit .errors,
+.body_create .errors{
+    margin: 16px auto 0 auto;
+    max-width: 1100px;
+    text-align: left;
+}
+
+.edit_form_button{
+    margin-left: 0;
+}
+
+.create_form_button{
+    margin-right: 8px;
+}
+
+/* =========================
+   CONFIRM BOX
+========================= */
+
+#confirm_box{
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(420px, 90vw);
+    min-height: 220px;
+    color: var(--green-solid);
+    background: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    z-index: 999;
+    text-align: center;
+}
+
+#confirm_box button{
+    color: white;
+    padding: 10px 16px;
+    background: var(--green);
+    border-radius: 6px;
+}
+
+.confirm_box_button{
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px){
+    .main_search,
+    .edit_main,
+    .main_create,
+    .history_main{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search_form,
+    .edit_form,
+    .create_form,
+    .history_form{
+        max-width: 100%;
+    }
+
+    .table_container{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    body{
+        margin: 0 12px;
+    }
+
+    .header_nav_list{
+        justify-content: flex-start;
+    }
+
+    .search_form div,
+    .edit_form div,
+    .create_form div,
+    .history_form div{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .search_form label,
+    .edit_form label,
+    .create_form label,
+    .history_form label{
+        min-width: auto;
+    }
+
+    .search_form input,
+    .search_form select,
+    .edit_form input,
+    .edit_form select,
+    .create_form input,
+    .create_form select,
+    .history_form input,
+    .history_form select{
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .form_dashboard{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form_dashboard button,
+    .search_form_button,
+    .edit_form_button,
+    .create_form_button,
+    .history_main button{
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px){
+    .login_form{
+        padding: 20px 16px;
+    }
+
+    th,
+    td{
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .header{
+        padding: 10px;
+    }
+
+    .header_nav_list_li{
+        width: 100%;
+        text-align: center;
+    }
+}
