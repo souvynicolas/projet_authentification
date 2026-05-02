@@ -118,13 +118,13 @@ http://localhost/phpmyadmin
 
 ### 5. Configurer la connexion à la base de données
 
-Dans le projet, ouvrir le fichier de connexion (ex : `config.php`) et vérifier :
+Dans le projet, ouvrir le fichier de connexion dans  le dossier config.php database.php et vérifier :
 
 ```php
 $host = "localhost";
 $user = "root";
 $password = ""; // mettre votre mot de passe si vous en avez un
-$database = authentification_test"; // nom de la base créée
+$database = authentification_test";
 ```
 
 ---
