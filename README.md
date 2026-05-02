@@ -51,7 +51,7 @@ Le projet est disponible ici :
 ```txt
 https://projet1-authentification.nicolassweb.fr
 
-
+Solution de secours
 
 ## ⚙️ Installation en local
 
