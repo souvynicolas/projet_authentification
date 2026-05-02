@@ -48,7 +48,7 @@ Il permet :
 Le projet est disponible ici :
 
 ```txt
-https://projet1_authentification.nicolassweb.fr
+https://projet1-authentification.nicolassweb.fr
 
 
 
@@ -99,7 +99,7 @@ http://localhost/phpmyadmin
 #### Étape 2 : Créer une base de données
 
 * Cliquer sur **"Nouvelle base de données"** (à gauche ou en haut)
-* Donner un nom à la base : `projet_authentification`
+* Donner un nom à la base : `authentification_test`
 * Cliquer sur **Créer**
 
 ---
