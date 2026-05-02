@@ -13,7 +13,7 @@ Ce projet permet de gérer un système d’authentification avec une gestion des
 Il permet :
 
 - la connexion utilisateur
-- la gestion des utilisateurs(Création,mise à jour,suppression, activation/désactivationrecherche)
+- la gestion des utilisateurs (Création,mise à jour,suppression, activation/désactivation,recherche)
 - la gestion des rôles
 - le suivi des actions (logs)
 
