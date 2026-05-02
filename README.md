@@ -8,12 +8,12 @@ Application web d’authentification développée avec PHP, MySQL, HTML, CSS et 
 
 ## 🚀 Description
 
-Ce projet permet de gérer un système d’authentification avec différents utilisateurs et rôles.
+Ce projet permet de gérer un système d’authentification avec une gestion des utilisateurs et rôles associés.
 
 Il permet :
 
 - la connexion utilisateur
-- la gestion des utilisateurs
+- la gestion des utilisateurs(Création,mise à jour,suppression, activation/désactivationrecherche)
 - la gestion des rôles
 - le suivi des actions (logs)
 
