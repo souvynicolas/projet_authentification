@@ -8,6 +8,7 @@
 </head>
 <body class="body_create">
     <?php require __DIR__ . '/../layout/header.php'; ?>
+    <div><?php displayErrors($errors ?? []); ?></div>
     <main class="main_create">
         <div><?php displayUsersTable($users); ?></div>
         <form action="index.php?page=create_delete_user" method="POST" id="tableau" autocomplete="on" class="create_form">
@@ -52,7 +53,7 @@
             </div>
         </form>
     </main>
-    <?php displayErrors($errors ?? []); ?>
+    
     <script src="assets/javascript.js"></script>
 </body>
 </html>

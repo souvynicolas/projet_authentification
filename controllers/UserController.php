@@ -3,41 +3,51 @@
 function dashboardController(PDO $pdo): void
 {
     requireAuth();
+
     $errors = [];
+    $roleId = currentRole();
+    $autroles = ($roleId === 3);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $userId = (int)($_POST['d_create_id'] ?? 0);
-        $login = trim($_POST['d_login'] ?? '');
 
-        if ($userId > 0) {
-            if ($userId === (int)($_SESSION['user_id'] ?? 0) && isset($_POST['btn_disable'])) {
-                $errors[] = 'Impossible de vous désactiver vous-même';
-            }
+        if (!$autroles) {
+            $errors[] = "Vous n'avez pas les droits pour modifier les utilisateurs.";
+        } else {
+            $userId = (int)($_POST['d_create_id'] ?? 0);
+            $login = trim($_POST['d_login'] ?? '');
 
-            if (empty($errors)) {
-                if (isset($_POST['btn_enable'])) {
-                    setUserActive($pdo, $userId, true);
-                } elseif (isset($_POST['btn_disable'])) {
-                    setUserActive($pdo, $userId, false);
+            if ($userId > 0) {
+                if ($userId === (int)($_SESSION['user_id'] ?? 0) && isset($_POST['btn_disable'])) {
+                    $errors[] = 'Impossible de vous désactiver vous-même';
                 }
 
-                createActionLog(
-                    $pdo,
-                    'update active',
-                    "active $login modifié",
-                    $_SESSION['user_id'] ?? null,
-                    $userId
-                );
+                if (empty($errors)) {
+                    if (isset($_POST['btn_enable'])) {
+                        setUserActive($pdo, $userId, true);
+                    } elseif (isset($_POST['btn_disable'])) {
+                        setUserActive($pdo, $userId, false);
+                    }
+
+                    createActionLog(
+                        $pdo,
+                        'update active',
+                        "active $login modifié",
+                        $_SESSION['user_id'] ?? null,
+                        $userId
+                    );
+                }
             }
         }
     }
 
     render('users/dashboard', [
         'users' => getAllUsers($pdo),
-        'role_id' => currentRole(),
+        'role_id' => $roleId,
+        'autroles' => $autroles,
         'errors' => $errors,
     ]);
 }
+
 
 function searchUserController(PDO $pdo): void
 {

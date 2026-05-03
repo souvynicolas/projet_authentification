@@ -16,8 +16,10 @@
         <form class="form_dashboard" method="POST" action="index.php?page=dashboard">
             <input type="hidden" name="d_create_id" data-create_id id="d_create_id">
             <input type="hidden" name="d_login" id="d_login">
-            <button type="submit" name="btn_enable">Activer l'utilisateur</button>
-            <button type="submit" name="btn_disable">Désactiver l'utilisateur</button>
+            <?php if (!empty($autroles)): ?>
+                <button type="submit" name="btn_enable">Activer</button>
+                <button type="submit" name="btn_disable">Désactiver</button>
+            <?php endif; ?>
         </form>
     </main>
     <script src="assets/javascript.js"></script>
