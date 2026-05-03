@@ -44,6 +44,10 @@ Il permet :
 
 ---
 
+
+## doumentation
+ synthèse des documents remit dans dossier documentations list_doc.png
+
 ## 🌍 Site en ligne
 
 Le projet est disponible ici :
@@ -67,12 +71,11 @@ Solution de secours
 
 ---
 
-### 2. Cloner le projet
+### 2. télécharger le dossier
 
-```bash
-git clone https://github.com/souvynicolas/projet_authentification.git
-```
-
+cliquer sur code en haut a droite
+download zip
+extraire le dossier
 ---
 
 ### 3. Placer le projet
@@ -111,11 +114,12 @@ http://localhost/phpmyadmin
 * Aller dans l’onglet **"Importer"**
 * Cliquer sur **"Choisir un fichier"**
 * Sélectionner le fichier `authentification_test.sql` présent dans le projet
-* Cliquer sur **Exécuter**
+* Cliquer sur **Importer**
 
 👉 Si tout se passe bien, les tables apparaissent
 
----
+   si erreur remplacer dans fichier gestion_de_stock_test.sql utfm_mb4_0900_ai_ci par utfm_mb4_0900_unicode_ci
+
 
 ### 5. Configurer la connexion à la base de données
 
@@ -124,7 +128,7 @@ Dans le projet, ouvrir le fichier de connexion dans  le dossier config.php datab
 ```php
 $host = "localhost";
 $user = "root";
-$password = ""; // mettre votre mot de passe si vous en avez un
+$password = "";
 $database = authentification_test";
 ```
 
