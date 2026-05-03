@@ -75,7 +75,7 @@ Solution de secours
 
 cliquer sur code en haut a droite
 download zip
-extraire le dossier
+extraire le dossier et renommer le dossier en : projet_authentification
 ---
 
 ### 3. Placer le projet
